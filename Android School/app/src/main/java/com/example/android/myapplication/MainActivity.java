@@ -9,10 +9,10 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    /**
-     *  عرفوا مصفوفة بإسم students
-     *  define an arraylist named students
-     */
+
+    ArrayList<Students> studentlist = new ArrayList<>();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,16 +20,17 @@ public class MainActivity extends AppCompatActivity {
 
         ListView listView = findViewById(R.id.studentListView);
 
-        /**
-         *  إكتبوا الكود بعد هذا السطر
-         *  ضيفوا عناصر من الكلاس
-         *  add objects from class Student
-         */
+        Students s1 = new Students("يوسف",14,12,R.drawable.boy1);
+        Students s2 = new Students("سلمان",13,10,R.drawable.boy1);
+        Students s3 = new Students("ماجد",15,11,R.drawable.boy1);
+        Students s4 = new Students("فهد",16,15,R.drawable.boy1);
+
+        studentlist.add(s1);
+        studentlist.add(s2);
+        studentlist.add(s3);
+        studentlist.add(s4);
 
 
-        StudentAdapter studentAdapter = new StudentAdapter(this,0,students);
 
-
-        listView.setAdapter(studentAdapter);
     }
 }
